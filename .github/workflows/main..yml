@@ -15,6 +15,14 @@ on:
           - electron
           - chrome
           - firefox
+      environment:
+        type: choice
+        description: Which environment to run?
+        required: true
+        options:
+          - qa
+          - staging
+          - prod
       grep:
         description: 'Optional tag or pattern (e.g. @smoke)'
         required: false
@@ -36,7 +44,7 @@ jobs:
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
-          command: npm run runProd -- --env grepTags=${{ github.event.inputs.grep }}
+          command: npm run runHead -- --env env='${{github.event.inputs.environment}}',grepTags=${{ github.event.inputs.grep }}
 
       - name: Upload artifacts
         if: always()
