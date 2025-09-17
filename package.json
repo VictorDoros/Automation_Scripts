@@ -4,6 +4,7 @@
   "description": "Cypress + TypeScript testing framework template with POM and reports",
   "main": "index.js",
   "scripts": {
+    "runProd": "cypress run --env env='prod'",
     "lint": "npx eslint cypress/**/*.{ts,js}",
     "format": "prettier --write 'cypress/**/*.{ts,js}'",
     "format:check": "prettier --check 'cypress/**/*.{ts,js}'"
