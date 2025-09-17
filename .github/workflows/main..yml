@@ -25,21 +25,10 @@ on:
 jobs:
   cypress:
     runs-on: ubuntu-22.04
-    strategy:
-      fail-fast: false
-      matrix:
-        node: [20]
-        browser: [chrome, firefox, electron]
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
@@ -47,14 +36,13 @@ jobs:
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
-          browser: ${{ matrix.browser }}
           command: npm run runProd
 
       - name: Upload artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: cypress-${{ matrix.browser }}-artifacts
+          name: cypress-artifacts
           path: |
             cypress/reports/html/**
             cypress/screenshots/**
