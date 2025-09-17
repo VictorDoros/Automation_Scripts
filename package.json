@@ -1,0 +1,35 @@
+{
+  "name": "cypress-ts-template",
+  "version": "1.0.0",
+  "description": "Cypress + TypeScript testing framework template with POM and reports",
+  "main": "index.js",
+  "scripts": {
+    "lint": "npx eslint cypress/**/*.{ts,js}",
+    "format": "prettier --write 'cypress/**/*.{ts,js}'",
+    "format:check": "prettier --check 'cypress/**/*.{ts,js}'"
+  },
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "devDependencies": {
+    "@cypress/grep": "^4.1.1",
+    "@eslint/js": "^9.35.0",
+    "@types/chai": "^5.2.2",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.3.1",
+    "@typescript-eslint/eslint-plugin": "^8.43.0",
+    "@typescript-eslint/parser": "^8.43.0",
+    "cypress": "^15.2.0",
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "cypress-plugin-steps": "^1.2.1",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-cypress": "^5.1.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-mocha": "^11.1.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.4.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.43.0"
+  }
+}
