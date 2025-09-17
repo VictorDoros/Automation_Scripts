@@ -40,7 +40,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: ${{ matrix.browser }}
-          command: npm run runDev -- --env grep=${{ github.event.inputs.grep }}
+          command: npm run runProd
 
       - name: Upload artifacts
         if: always()
