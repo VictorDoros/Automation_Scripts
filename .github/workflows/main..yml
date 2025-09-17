@@ -36,7 +36,7 @@ jobs:
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
-          command: npm run runProd
+          command: npm run runProd -- --env grep=${{ github.event.inputs.grep }}
 
       - name: Upload artifacts
         if: always()
