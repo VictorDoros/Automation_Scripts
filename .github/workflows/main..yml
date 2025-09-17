@@ -7,6 +7,14 @@ on:
     branches: [master]
   workflow_dispatch:
     inputs:
+      browser:
+        type: choice
+        description: Which browser to run?
+        required: true
+        options:
+          - electron
+          - chrome
+          - firefox
       grep:
         description: 'Optional tag or pattern (e.g. @smoke)'
         required: false
@@ -21,7 +29,7 @@ jobs:
       fail-fast: false
       matrix:
         node: [20]
-        browser: [chrome, firefox]
+        browser: [chrome, firefox, electron]
 
     steps:
       - name: Checkout code
