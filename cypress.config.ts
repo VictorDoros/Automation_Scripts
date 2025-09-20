@@ -18,6 +18,7 @@ export default defineConfig({
 
   e2e: {
     env: {
+      env: 'prod', // default environment (can be overridden via CLI, e.g. env=staging)
       grepFilterSpecs: true, // run only matching tests
       grepOmitFiltered: true, // omit non-matching tests from run
     },
