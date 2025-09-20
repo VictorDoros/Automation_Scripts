@@ -1,10 +1,6 @@
 name: E2E Regression
 
 on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
   workflow_dispatch:
     inputs:
       browser:
@@ -50,7 +46,7 @@ jobs:
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
-          command: npx cypress run --env env='${{ github.event.inputs.environment }}',grepTags=${{ github.event.inputs.grep }}
+          command: npm run head -- --env env='${{ github.event.inputs.environment }}',grepTags=${{ github.event.inputs.grep }}
 
       - name: Upload artifacts
         if: always()
