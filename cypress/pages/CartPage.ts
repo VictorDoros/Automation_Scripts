@@ -3,6 +3,7 @@ class Views {
     return cy.get('[data-test="inventory-item"]')
   }
 }
+
 class Buttons {
   get checkout(): Cypress.Chainable<JQuery<HTMLElement>> {
     return cy.get('[data-test="checkout"]')

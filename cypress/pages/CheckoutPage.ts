@@ -11,6 +11,7 @@ class Inputs {
     return cy.get('[data-test="postalCode"]')
   }
 }
+
 class Buttons {
   get continue(): Cypress.Chainable<JQuery<HTMLElement>> {
     return cy.get('[data-test="continue"]')
