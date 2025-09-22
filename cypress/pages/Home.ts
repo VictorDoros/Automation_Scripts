@@ -1,6 +1,6 @@
 import Environment from '../fixtures/environment'
 
-export default abstract class HomePage {
+export default abstract class Home {
   /**
    * Visits the application URL based on the provided environment configuration.
    *

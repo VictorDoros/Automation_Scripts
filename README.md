@@ -38,11 +38,11 @@ Automation_Scripts/
    │  ├─ AppSidebar.ts
    │  └─ Topbar.ts
    ├─ pages/                     # Page Objects
-   │  ├─ HomePage.ts
-   │  ├─ LoginPage.ts
-   │  ├─ InventoryPage.ts
-   │  ├─ CartPage.ts
-   │  └─ CheckoutPage.ts
+   │  ├─ Home.ts
+   │  ├─ Login.ts
+   │  ├─ Inventory.ts
+   │  ├─ Cart.ts
+   │  └─ Checkout.ts
    ├─ support/
    │  ├─ TestHelpers.ts         # Custom utility helpers (steps, waits, checks)
    │  ├─ commands.ts             # Place custom Cypress.Commands here
@@ -114,7 +114,7 @@ Pass the target environment using `--env env=<qa|staging|prod>`:
 npx cypress run --env env=staging
 ```
 
-> The `HomePage.visit(env)` leverages the `env.getEnvironment()` method to resolve the correct base URL.
+> The `Home.visit(env)` leverages the `env.getEnvironment()` method to resolve the correct base URL.
 
 ---
 

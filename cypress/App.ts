@@ -1,22 +1,22 @@
-import LoginPage from './pages/LoginPage'
-import InventoryPage from './pages/InventoryPage'
-import CartPage from './pages/CartPage'
-import CheckoutPage from './pages/CheckoutPage'
+import Login from './pages/Login'
+import Inventory from './pages/Inventory'
+import Cart from './pages/Cart'
+import Checkout from './pages/Checkout'
 import AppSidebar from './navigation/AppSidebar'
 import Topbar from './navigation/Topbar'
 
 class Pages {
   get login() {
-    return LoginPage
+    return Login
   }
   get inventory() {
-    return InventoryPage
+    return Inventory
   }
   get cart() {
-    return CartPage
+    return Cart
   }
   get checkout() {
-    return CheckoutPage
+    return Checkout
   }
 }
 

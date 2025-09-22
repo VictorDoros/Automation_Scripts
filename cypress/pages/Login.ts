@@ -1,4 +1,4 @@
-import HomePage from './HomePage'
+import Home from './HomeP'
 
 class Inputs {
   get username(): Cypress.Chainable<JQuery<HTMLElement>> {
@@ -22,7 +22,7 @@ class Views {
   }
 }
 
-class LoginPage extends HomePage {
+class Login extends Home {
   inputs: Inputs
   buttons: Buttons
   views: Views
@@ -47,4 +47,4 @@ class LoginPage extends HomePage {
   }
 }
 
-export default new LoginPage()
+export default new Login()
