@@ -21,7 +21,7 @@ describe('Log in - Functional', { tags: ['@auth'] }, () => {
 
     TestHelpers.defineTheStep('Log out through the sidebar menu')
     App.navigation.topBar.buttons.openMenu.click()
-    App.navigation.appSidebar.views.logout.click()
+    App.navigation.appSidebar.buttons.logout.click()
 
     TestHelpers.defineTheStep('Confirm that the user is logged out (login form visible)')
     App.pages.login.buttons.login.should('be.visible')
@@ -32,7 +32,7 @@ describe('Log in - Functional', { tags: ['@auth'] }, () => {
     App.pages.login.loginUser(user.badUser.username, user.badUser.password)
 
     TestHelpers.defineTheStep('Verify that the error message is shown')
-    App.pages.login.views.errorContainer.should('be.visible').and('contain.text', 'Username and password do not match')
+    App.pages.login.output.errorContainer.should('be.visible').and('contain.text', 'Username and password do not match')
   })
 
   it('Login fails with locked user', () => {
@@ -40,7 +40,7 @@ describe('Log in - Functional', { tags: ['@auth'] }, () => {
     App.pages.login.loginUser(user.lockedUser.username, user.lockedUser.password)
 
     TestHelpers.defineTheStep('Verify that the error message is shown')
-    App.pages.login.views.errorContainer
+    App.pages.login.output.errorContainer
       .should('be.visible')
       .and('contain.text', 'Sorry, this user has been locked out')
   })

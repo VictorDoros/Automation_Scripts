@@ -9,7 +9,7 @@ A lean, opinionated end‑to‑end testing starter built with **Cypress** + **Ty
 ## ✨ Highlights
 
 - **TypeScript-first** setup with strict types (`cypress/tsconfig.json`)
-- **POM structure**: `pages`, `navigation`, and `Website.ts` composition
+- **POM structure**: `pages`, `navigation`, and `App.ts` composition
 - **Realistic specs**: `auth/login.cy.ts`, `checkout/checkout-flow.cy.ts`, `smoke/healthcheck.cy.ts`
 - **Reusable utilities**: `TestHelpers` for steps, waits, and health checks
 - **Tagging & selective runs** with `@cypress/grep` (`{ tags: [...] }` in `describe` and `it`)
@@ -30,7 +30,7 @@ Automation_Scripts/
 └─ cypress/
    ├─ cypress.d.ts
    ├─ tsconfig.json
-   ├─ Website.ts                 # Central access to POM groups
+   ├─ App.ts                 # Central access to POM groups
    ├─ fixtures/
    │  ├─ environment.ts          # Maps env keys → base URLs (qa/staging/prod)
    │  └─ user.ts                 # Test users
@@ -182,12 +182,12 @@ Open the generated HTML report in your browser to review steps and failures.
 
 ## 🧱 Page Object Model (POM)
 
-The kit splits UI logic into **Inputs**, **Buttons**, **Views** within each Page Object, keeping selectors and actions tidy. `Website.ts` exposes accessors so tests read fluently:
+The kit splits UI logic into **Inputs**, **Buttons**, **Views** within each Page Object, keeping selectors and actions tidy. `App.ts` exposes accessors so tests read fluently:
 
 ```ts
-Website.pages.login.visit(env)
-Website.pages.login.loginUser(username, password)
-Website.navigation.topBar.checkCartBadgeNumber(1)
+App.pages.login.visit(env)
+App.pages.login.loginUser(username, password)
+App.navigation.topBar.checkCartBadgeNumber(1)
 ```
 
 This composition keeps tests expressive, low-noise, and resilient to UI changes.
@@ -254,7 +254,7 @@ Artifacts uploaded after each run include reports, screenshots, and videos.
 
 ## 🔧 Extending the Suite
 
-- **Add a new page**: create `cypress/pages/YourPage.ts`, expose it via `Website.ts`.
+- **Add a new page**: create `cypress/pages/YourPage.ts`, expose it via `App.ts`.
 - **Create reusable flows**: add helpers to `TestHelpers.ts` or extract into domain-specific services.
 - **Add data**: place static fixtures in `cypress/fixtures/`.
 - **Custom commands**: add to `cypress/support/commands.ts` and extend types in `cypress/cypress.d.ts` if needed.

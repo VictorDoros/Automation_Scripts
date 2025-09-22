@@ -1,4 +1,4 @@
-class Views {
+class Output {
   get inventoryItem(): Cypress.Chainable<JQuery<HTMLElement>> {
     return cy.get('[data-test="inventory-item"]')
   }
@@ -11,11 +11,11 @@ class Buttons {
 }
 
 class Cart {
-  views: Views
+  output: Output
   buttons: Buttons
 
   constructor() {
-    this.views = new Views()
+    this.output = new Output()
     this.buttons = new Buttons()
   }
 }

@@ -16,7 +16,7 @@ class Buttons {
   }
 }
 
-class Views {
+class Output {
   get errorContainer(): Cypress.Chainable<JQuery<HTMLElement>> {
     return cy.get('[data-test="error"]')
   }
@@ -25,13 +25,13 @@ class Views {
 class Login extends Home {
   inputs: Inputs
   buttons: Buttons
-  views: Views
+  output: Output
 
   constructor() {
     super()
     this.inputs = new Inputs()
     this.buttons = new Buttons()
-    this.views = new Views()
+    this.output = new Output()
   }
 
   /**

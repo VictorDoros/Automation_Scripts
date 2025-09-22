@@ -4,7 +4,7 @@ class Buttons {
   }
 }
 
-class Views {
+class Output {
   get inventoryItem(): Cypress.Chainable<JQuery<HTMLElement>> {
     return cy.get('[data-test="inventory-item"]')
   }
@@ -12,18 +12,18 @@ class Views {
 
 class Inventory {
   buttons: Buttons
-  views: Views
+  output: Output
 
   constructor() {
     this.buttons = new Buttons()
-    this.views = new Views()
+    this.output = new Output()
   }
 
   /**
    * Adds the first inventory item to the cart by clicking its [Add to cart] button.
    */
   getFirstItem() {
-    return this.views.inventoryItem.first().within(() => {
+    return this.output.inventoryItem.first().within(() => {
       this.buttons.addToCart.click()
     })
   }

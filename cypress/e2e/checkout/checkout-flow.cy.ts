@@ -27,7 +27,7 @@ describe('Checkout flow', { tags: ['@checkout'] }, () => {
     TestHelpers.waitForUrlToInclude('/cart.html')
 
     TestHelpers.defineTheStep('Verify that the cart contains 1 item')
-    App.pages.cart.views.inventoryItem.should('have.length', 1)
+    App.pages.cart.output.inventoryItem.should('have.length', 1)
 
     TestHelpers.defineTheStep('Proceed to checkout and verify that the user is redirected to the checkout page')
     App.pages.cart.buttons.checkout.click()
@@ -39,6 +39,6 @@ describe('Checkout flow', { tags: ['@checkout'] }, () => {
 
     TestHelpers.defineTheStep('Verify that checkout completed successfully')
     TestHelpers.waitForUrlToInclude('/checkout-complete.html')
-    App.pages.checkout.views.completeHeader.should('be.visible').and('have.text', 'Thank you for your order!')
+    App.pages.checkout.output.completeHeader.should('be.visible').and('have.text', 'Thank you for your order!')
   })
 })

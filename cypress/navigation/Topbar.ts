@@ -7,7 +7,7 @@ class Buttons {
   }
 }
 
-class Views {
+class Output {
   get cartBadge(): Cypress.Chainable<JQuery<HTMLElement>> {
     return cy.get('[data-test="shopping-cart-badge"]')
   }
@@ -15,11 +15,11 @@ class Views {
 
 class Topbar {
   buttons: Buttons
-  views: Views
+  ouput: Output
 
   constructor() {
     this.buttons = new Buttons()
-    this.views = new Views()
+    this.ouput = new Output()
   }
 
   /**
@@ -28,7 +28,7 @@ class Topbar {
    * @param expectedNumberOfItems - Expected number to contain the cart's badge
    */
   checkCartBadgeNumber(expectedNumberOfItems: number) {
-    this.views.cartBadge.invoke('text').then(items => {
+    this.ouput.cartBadge.invoke('text').then(items => {
       expect(Number(items)).to.eq(expectedNumberOfItems)
     })
   }

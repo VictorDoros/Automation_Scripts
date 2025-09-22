@@ -22,7 +22,7 @@ class Buttons {
   }
 }
 
-class Views {
+class Output {
   get completeHeader(): Cypress.Chainable<JQuery<HTMLElement>> {
     return cy.get('[data-test="complete-header"]')
   }
@@ -31,12 +31,12 @@ class Views {
 class Checkout {
   inputs: Inputs
   buttons: Buttons
-  views: Views
+  output: Output
 
   constructor() {
     this.inputs = new Inputs()
     this.buttons = new Buttons()
-    this.views = new Views()
+    this.output = new Output()
   }
 
   /**
