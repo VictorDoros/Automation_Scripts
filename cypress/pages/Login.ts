@@ -1,4 +1,4 @@
-import Home from './HomeP'
+import Home from './Home'
 
 class Inputs {
   get username(): Cypress.Chainable<JQuery<HTMLElement>> {
