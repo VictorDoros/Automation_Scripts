@@ -182,7 +182,7 @@ Open the generated HTML report in your browser to review steps and failures.
 
 ## 🧱 Page Object Model (POM)
 
-The kit splits UI logic into **Inputs**, **Buttons**, **Views** within each Page Object, keeping selectors and actions tidy. `App.ts` exposes accessors so tests read fluently:
+The kit splits UI logic into **Inputs**, **Buttons**, **Output** within each Page Object, keeping selectors and actions tidy. `App.ts` exposes accessors so tests read fluently:
 
 ```ts
 App.pages.login.visit(env)
