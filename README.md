@@ -11,7 +11,7 @@ A lean, opinionated end‑to‑end testing starter built with **Cypress** + **Ty
 - **TypeScript-first** setup with strict types (`cypress/tsconfig.json`)
 - **POM structure**: `pages`, `navigation`, and `Website.ts` composition
 - **Realistic specs**: `auth/login.cy.ts`, `checkout/checkout-flow.cy.ts`, `smoke/healthcheck.cy.ts`
-- **Reusable utilities**: `CypressUtils` for steps, waits, and health checks
+- **Reusable utilities**: `TestHelpers` for steps, waits, and health checks
 - **Tagging & selective runs** with `@cypress/grep` (`{ tags: [...] }` in `describe` and `it`)
 - **Mochawesome HTML reports** + screenshots/videos artifacts
 - **ESLint + Prettier** formatting/linting with sensible defaults
@@ -44,7 +44,7 @@ Automation_Scripts/
    │  ├─ CartPage.ts
    │  └─ CheckoutPage.ts
    ├─ support/
-   │  ├─ CypressUtils.ts         # Custom utility helpers (steps, waits, checks)
+   │  ├─ TestHelpers.ts         # Custom utility helpers (steps, waits, checks)
    │  ├─ commands.ts             # Place custom Cypress.Commands here
    │  └─ e2e.ts                  # Global setup: reporter, steps, grep registration
    └─ e2e/                       # Test specs
@@ -176,7 +176,7 @@ This kit uses **cypress-mochawesome-reporter**.
 
 Open the generated HTML report in your browser to review steps and failures.
 
-> Steps emitted via `CypressUtils.defineTheStep('...')` become human-friendly nodes in reports when paired with `cypress-plugin-steps`.
+> Steps emitted via `TestHelpers.defineTheStep('...')` become human-friendly nodes in reports when paired with `cypress-plugin-steps`.
 
 ---
 
@@ -255,7 +255,7 @@ Artifacts uploaded after each run include reports, screenshots, and videos.
 ## 🔧 Extending the Suite
 
 - **Add a new page**: create `cypress/pages/YourPage.ts`, expose it via `Website.ts`.
-- **Create reusable flows**: add helpers to `CypressUtils.ts` or extract into domain-specific services.
+- **Create reusable flows**: add helpers to `TestHelpers.ts` or extract into domain-specific services.
 - **Add data**: place static fixtures in `cypress/fixtures/`.
 - **Custom commands**: add to `cypress/support/commands.ts` and extend types in `cypress/cypress.d.ts` if needed.
 - **Selectors**: prefer `data-test` attributes when available for stability.
