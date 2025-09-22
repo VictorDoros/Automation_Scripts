@@ -1,4 +1,4 @@
-# Cypress + TypeScript Automation Kit
+# Cypress + TypeScript Automation UI Kit
 
 A lean, opinionated end‑to‑end testing starter built with **Cypress** + **TypeScript**, organized with a clear **Page Object Model (POM)**, test **tagging** via `@cypress/grep`, and **rich HTML reports** via `cypress-mochawesome-reporter`. It targets the sample **Sauce Demo** site to showcase real, working flows (login, inventory, cart, checkout) and a simple **healthcheck**.
 
