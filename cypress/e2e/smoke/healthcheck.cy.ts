@@ -1,5 +1,5 @@
 import Environment from '../../fixtures/environment'
-import CypressUtils from '../../support/CypressUtils'
+import TestHelpers from '../../support/TestHelpers'
 import App from '../../App'
 
 describe('Healthcheck', { tags: ['@healthCheck'] }, () => {
@@ -10,10 +10,10 @@ describe('Healthcheck', { tags: ['@healthCheck'] }, () => {
   })
 
   it('Loading the app', () => {
-    CypressUtils.defineTheStep('Access the Home Page')
+    TestHelpers.defineTheStep('Access the Home Page')
     App.pages.login.visit(env)
 
-    CypressUtils.defineTheStep('Cofirm that the app loads and has the title')
-    CypressUtils.checkSiteTitle()
+    TestHelpers.defineTheStep('Cofirm that the app loads and has the title')
+    TestHelpers.checkSiteTitle()
   })
 })
