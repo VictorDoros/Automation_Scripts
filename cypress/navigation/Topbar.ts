@@ -13,7 +13,7 @@ class Views {
   }
 }
 
-class Navbar {
+class Topbar {
   buttons: Buttons
   views: Views
 
@@ -33,4 +33,4 @@ class Navbar {
     })
   }
 }
-export default new Navbar()
+export default new Topbar()

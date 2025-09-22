@@ -35,8 +35,8 @@ Automation_Scripts/
    │  ├─ environment.ts          # Maps env keys → base URLs (qa/staging/prod)
    │  └─ user.ts                 # Test users
    ├─ navigation/                # UI components shared across pages
-   │  ├─ MainSidebar.ts
-   │  └─ Navbar.ts
+   │  ├─ AppSidebar.ts
+   │  └─ Topbar.ts
    ├─ pages/                     # Page Objects
    │  ├─ HomePage.ts
    │  ├─ LoginPage.ts
@@ -187,7 +187,7 @@ The kit splits UI logic into **Inputs**, **Buttons**, **Views** within each Page
 ```ts
 Website.pages.login.visit(env)
 Website.pages.login.loginUser(username, password)
-Website.navigation.navBar.checkCartBadgeNumber(1)
+Website.navigation.topBar.checkCartBadgeNumber(1)
 ```
 
 This composition keeps tests expressive, low-noise, and resilient to UI changes.

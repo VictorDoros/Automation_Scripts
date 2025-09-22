@@ -2,8 +2,8 @@ import LoginPage from './pages/LoginPage'
 import InventoryPage from './pages/InventoryPage'
 import CartPage from './pages/CartPage'
 import CheckoutPage from './pages/CheckoutPage'
-import MainSidebar from './navigation/MainSidebar'
-import Navbar from './navigation/Navbar'
+import AppSidebar from './navigation/AppSidebar'
+import Topbar from './navigation/Topbar'
 
 class Pages {
   get login() {
@@ -21,11 +21,11 @@ class Pages {
 }
 
 class Navigation {
-  get mainSidebar() {
-    return MainSidebar
+  get appSidebar() {
+    return AppSidebar
   }
-  get navBar() {
-    return Navbar
+  get topBar() {
+    return Topbar
   }
 }
 

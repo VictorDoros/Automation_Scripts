@@ -20,10 +20,10 @@ describe('Checkout flow', { tags: ['@checkout'] }, () => {
     App.pages.inventory.getFirstItem()
 
     TestHelpers.defineTheStep('Verify that the cart badge shows 1 item')
-    App.navigation.navBar.checkCartBadgeNumber(1)
+    App.navigation.topBar.checkCartBadgeNumber(1)
 
     TestHelpers.defineTheStep('Open the cart and verify that the user was redirected to cart page')
-    App.navigation.navBar.buttons.cart.click()
+    App.navigation.topBar.buttons.cart.click()
     TestHelpers.waitForUrlToInclude('/cart.html')
 
     TestHelpers.defineTheStep('Verify that the cart contains 1 item')

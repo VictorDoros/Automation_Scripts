@@ -4,11 +4,11 @@ class Views {
   }
 }
 
-class MainSidebar {
+class AppSidebar {
   views: Views
 
   constructor() {
     this.views = new Views()
   }
 }
-export default new MainSidebar()
+export default new AppSidebar()

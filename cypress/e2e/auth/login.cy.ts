@@ -20,8 +20,8 @@ describe('Log in - Functional', { tags: ['@auth'] }, () => {
     TestHelpers.waitForUrlToInclude('/inventory.html')
 
     TestHelpers.defineTheStep('Log out through the sidebar menu')
-    App.navigation.navBar.buttons.openMenu.click()
-    App.navigation.mainSidebar.views.logout.click()
+    App.navigation.topBar.buttons.openMenu.click()
+    App.navigation.appSidebar.views.logout.click()
 
     TestHelpers.defineTheStep('Confirm that the user is logged out (login form visible)')
     App.pages.login.buttons.login.should('be.visible')
