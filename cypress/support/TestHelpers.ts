@@ -1,4 +1,4 @@
-class CypressUtils {
+class TestHelpers {
   /**
    * Defines a test step with the given description.
    * Wrapper around `cy.step()` for clearer step reporting.
@@ -29,4 +29,4 @@ class CypressUtils {
   }
 }
 
-export default new CypressUtils()
+export default new TestHelpers()
